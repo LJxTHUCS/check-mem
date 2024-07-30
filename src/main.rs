@@ -117,7 +117,7 @@ lazy_static!(
         mmap: false,
         munmap: false,
         brk_addr_range: (0x1b000, 0x29000),
-        sbrk_incr_range: (0, 0x2000),
+        sbrk_incr_range: (-0x2000, 0x2000),
         mmap_addr_range: (0, 0),
         mmap_len_range: (0, 0),
     }, StdoutPrinter, MemTestPort, UserSpace::new(UserSpaceConfig{
@@ -138,7 +138,7 @@ extern "C" fn hook(_data: u64, ptr: CPUArchStatePtr, _addr: u64) {
         CHECKER
             .lock()
             .unwrap()
-            .step(CheckLevel::Relaxed, CheckLevel::Relaxed)
+            .step(CheckLevel::Relaxed, CheckLevel::Strict)
             .expect("Check failed");
     }
 }
