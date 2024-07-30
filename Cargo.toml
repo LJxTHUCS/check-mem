@@ -1,0 +1,13 @@
+[package]
+name = "check-mem"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+km-checker = { path = "../framework/km-checker" }
+model-mem = { path = "../model-mem" }
+libafl_qemu = { git = "https://github.com/nine-point-eight-p/LibAFL", branch = "libafl_qemu_riscv", features = [
+    "riscv64",
+    "systemmode",
+] } # TODO: Replace when RISCV is supported in original repo
+lazy_static = "1.5.0"

@@ -1,0 +1,9 @@
+[submodule "kernel/rCore-Tutorial-v3-model-mem"]
+	path = kernel/rCore-Tutorial-v3
+	url = https://github.com/nine-point-eight-p/rCore-Tutorial-v3-model-mem.git
+[submodule "kernel/Alien"]
+	path = kernel/Alien
+	url = https://gitlab.eduxiji.net/202310007101563/Alien.git
+[submodule "kernel/Titanix"]
+	path = kernel/Titanix
+	url = https://github.com/greenhandzpx/Titanix.git
